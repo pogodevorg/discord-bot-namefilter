@@ -34,6 +34,14 @@ if __name__ == '__main__':
 
     @client.event
     async def on_message(message):
+        if message.content.startswith('!resetnick'):
+            try:
+                await client.change_nickname(message.author, "")
+                await client.send_message(message.author, "You have successfully reset your nickname to `%s`!\n```Please consider changing your username to an appropriate name that does not include unicode special characters.```" % message.author.name)
+                await client.delete_message(message)
+                return
+            except discord.Forbidden:
+                return
         if bot.on_message(message):
             nickname = message.author.name
             encoded_nickname = nickname.encode('unicode_escape')
