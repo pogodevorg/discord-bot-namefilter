@@ -18,6 +18,12 @@ class ChannelManagement(BaseWorker):
 
         self.client.loop.create_task(self.filter())
 
+    def IsValid(self, var):
+        if var is None:
+            return False
+        else:
+            return True
+	
     async def filter(self):
 
         await self.client.wait_until_ready()
@@ -43,7 +49,9 @@ class ChannelManagement(BaseWorker):
         # Do nothing if bot is sending message
         if message.author == self.client.user:
             return False
-
+        # Do nothing if bot cannot find attribute roles
+        if self.IsValid(message.author.roles) is False:
+            return False
         """
         Ignore if message from except roles
         """
@@ -52,7 +60,7 @@ class ChannelManagement(BaseWorker):
                 return False
 
         """
-        Check if message contains role name
+        Check if message contains unicode name
         """
         # Manage channel nickname filter
         if message.channel.name in self.config.get('channels', []):
