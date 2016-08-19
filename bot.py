@@ -37,7 +37,7 @@ if __name__ == '__main__':
         if message.content.startswith('!resetnick'):
             try:
                 await client.change_nickname(message.author, "")
-                await client.send_message(message.author, "You have successfully reset your nickname to `%s`!\n```Please consider changing your username to an appropriate name that does not include unicode special characters.```" % message.author.name)
+                await client.send_message(message.author, "You have successfully reset your name back to `%s`!\n```Please consider changing your username to an appropriate name that does not include unicode special characters.```" % message.author.name)
                 await client.delete_message(message)
                 return
             except discord.Forbidden:
