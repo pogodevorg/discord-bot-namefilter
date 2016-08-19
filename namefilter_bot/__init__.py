@@ -43,6 +43,6 @@ class NameFilterBot(object):
     def on_message(self, message):
         worker = ChannelManagement(self, self.config)
 
-        return worker.need_to_delete(message)
+        return worker.need_to_strip(message)
             
         

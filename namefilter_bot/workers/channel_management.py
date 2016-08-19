@@ -42,7 +42,7 @@ class ChannelManagement(BaseWorker):
 
             await asyncio.sleep(300)
 
-    def need_to_delete(self, message):
+    def need_to_strip(self, message):
 
         except_roles = self.config.get('except_roles', [])
 
