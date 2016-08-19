@@ -43,14 +43,14 @@ if __name__ == '__main__':
             except discord.Forbidden:
                 return
         if bot.on_message(message):
-            nickname = message.author.name
-            encoded_nickname = nickname.encode('unicode_escape')
-            stripped_nickname = encoded_nickname.decode('unicode_escape').encode('ascii','ignore').decode("utf-8")
-            if (len(str(stripped_nickname)) <= 3):
-                stripped_nickname = random.choice(['Carla', 'Price', 'Angelo', 'Cook', 'Charlene', 'Schwartz', 'Angel', 'Weber', 'Frederick', 'Daniel', 'Mack', 'Berry', 'Bobby', 'Guerrero', 'Willard', 'Allen', 'Krista', 'Walsh', 'Melanie', 'Perkins', 'Rickey', 'Carlson', 'Francis', 'Norman', 'Wilbert', 'Bowen', 'Gwen', 'Brewer', 'Stanley', 'Conner', 'Judy', 'Miller', 'Eduardo', 'Yates', 'Laverne', 'Morton', 'Julia', 'Foster', 'Leland', 'Steele', 'Dominic', 'Allison', 'Jason', 'Gray', 'Evan', 'Ortiz', 'Sheri', 'Rhodes', 'Kristy', 'Craig', 'Mamie', 'Glover', 'Marcella', 'Chapman', 'Allan', 'Ray', 'Erin', 'Lawrence', 'Robin', 'Reyes', 'Malcolm', 'Thornton', 'Maggie', 'Riley', 'Pat', 'Burns', 'Shelley', 'Soto', 'Lana', 'Harper', 'Leah', 'Harrington', 'Juana', 'Parker', 'Lindsay', 'Robbins', 'Bill', 'Simon', 'Jacquelyn', 'Cole', 'Laurence', 'Rios', 'Ralph', 'Garza', 'Marlon', 'Strickland', 'Minnie', 'Hammond', 'Ramon', 'Massey', 'Scott', 'Reid', 'Ray', 'Wagner', 'Stacy', 'Morales', 'Jan', 'Schultz', 'Spencer', 'Watson', 'WinnyDapooh', 'PigletDaPooh'])
+            authorname = message.author.name
+            encoded_authorname = authorname.encode('unicode_escape')
+            stripped_authorname = encoded_authorname.decode('unicode_escape').encode('ascii','ignore').decode("utf-8")
+            if (len(str(stripped_authorname)) <= 3):
+                stripped_authorname = random.choice(['Carla', 'Price', 'Angelo', 'Cook', 'Charlene', 'Schwartz', 'Angel', 'Weber', 'Frederick', 'Daniel', 'Mack', 'Berry', 'Bobby', 'Guerrero', 'Willard', 'Allen', 'Krista', 'Walsh', 'Melanie', 'Perkins', 'Rickey', 'Carlson', 'Francis', 'Norman', 'Wilbert', 'Bowen', 'Gwen', 'Brewer', 'Stanley', 'Conner', 'Judy', 'Miller', 'Eduardo', 'Yates', 'Laverne', 'Morton', 'Julia', 'Foster', 'Leland', 'Steele', 'Dominic', 'Allison', 'Jason', 'Gray', 'Evan', 'Ortiz', 'Sheri', 'Rhodes', 'Kristy', 'Craig', 'Mamie', 'Glover', 'Marcella', 'Chapman', 'Allan', 'Ray', 'Erin', 'Lawrence', 'Robin', 'Reyes', 'Malcolm', 'Thornton', 'Maggie', 'Riley', 'Pat', 'Burns', 'Shelley', 'Soto', 'Lana', 'Harper', 'Leah', 'Harrington', 'Juana', 'Parker', 'Lindsay', 'Robbins', 'Bill', 'Simon', 'Jacquelyn', 'Cole', 'Laurence', 'Rios', 'Ralph', 'Garza', 'Marlon', 'Strickland', 'Minnie', 'Hammond', 'Ramon', 'Massey', 'Scott', 'Reid', 'Ray', 'Wagner', 'Stacy', 'Morales', 'Jan', 'Schultz', 'Spencer', 'Watson', 'WinnyDapooh', 'PigletDaPooh'])
             try:
-                await client.change_nickname(message.author, stripped_nickname)
-                await client.send_message(message.author, "```"+"Your nickname was changed to "+stripped_nickname+"\nThis could've happened for a couple reasons:\n1.) Your name is 3 characters or less\n2.) Your name contained Unicode\nIf you wish to have a different name on our Discord, please change your username and use the !resetnick command in #lounge```")
+                await client.change_nickname(message.author, stripped_authorname)
+                await client.send_message(message.author, "```"+"Your nickname was changed to "+stripped_authorname+"\nThis could've happened for a couple reasons:\n1.) Your name is 3 characters or less\n2.) Your name contained Unicode\nIf you wish to have a different name on our Discord, please change your username and use the !resetnick command in #lounge```")
             except discord.Forbidden:
                 return
     bot.run_worker('ChannelManagement')

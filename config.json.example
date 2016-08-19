@@ -3,7 +3,5 @@
 	"channels": [
 	],
 	"except_roles": [
-	],
-	"blacklist": [
 	]
 }
