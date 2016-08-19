@@ -26,7 +26,7 @@ if __name__ == '__main__':
     with open('config.json') as output:
         config = json.load(output)
 
-    bot = FilterBot(client, config)
+    bot = NameFilterBot(client, config)
     api_key = config.get('api_key', 'NA')
 
     if api_key == 'NA':

@@ -10,11 +10,11 @@ import requests
 import sys
 import time
 
-from filter_bot import logger, workers
-from filter_bot.workers import ChannelManagement
+from namefilter_bot import logger, workers
+from namefilter_bot.workers import ChannelManagement
 from multiprocessing.dummy import Pool as ThreadPool
 
-class FilterBot(object):
+class NameFilterBot(object):
 
     def __init__(self, client, config):
         # config logging

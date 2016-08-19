@@ -46,7 +46,10 @@ class ChannelManagement(BaseWorker):
 
         except_roles = self.config.get('except_roles', [])
 
-        # Do nothing if bot is sending message
+        # Do nothing if bot cannot find user
+        if self.IsValid(message.author) is False:
+            return False
+        # Do nothing if bot is the sender in the message
         if message.author == self.client.user:
             return False
         # Do nothing if bot cannot find attribute roles
