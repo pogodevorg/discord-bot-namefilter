@@ -36,6 +36,12 @@ if __name__ == '__main__':
     async def on_message(message):
         if message.content.startswith('!resetnick'):
             try:
+                except_roles = bot.config.get('except_roles', [])
+                for role in message.author.roles:
+                    if role.name in except_roles:
+                        await client.send_message(message.author, "[EXCEPTION ROLES] You may not reset your nickname!")
+                        await client.delete_message(message)
+                        return
                 await client.change_nickname(message.author, "")
                 await client.send_message(message.author, "You have successfully reset your name back to `%s`!\n```Please consider changing your username to an appropriate name that does not include unicode special characters.```" % message.author.name)
                 await client.delete_message(message)
