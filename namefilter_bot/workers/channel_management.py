@@ -19,10 +19,13 @@ class ChannelManagement(BaseWorker):
         self.client.loop.create_task(self.filter())
 
     def IsValid(self, var):
-        if var is None:
+        try:
+            if var is None:
+                return False
+            else:
+                return True
+        except AttributeError:
             return False
-        else:
-            return True
 	
     async def filter(self):
 
