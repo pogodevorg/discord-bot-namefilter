@@ -17,15 +17,6 @@ class ChannelManagement(BaseWorker):
     def run(self):
 
         self.client.loop.create_task(self.filter())
-
-    def IsValid(self, var):
-        try:
-            if var is None:
-                return False
-            else:
-                return True
-        except AttributeError:
-            return False
 	
     async def filter(self):
 
@@ -56,7 +47,10 @@ class ChannelManagement(BaseWorker):
         if message.author == self.client.user:
             return False
         # Do nothing if bot cannot find attribute roles
-        if self.IsValid(message.author.roles) is False:
+        try:
+            if message.author.roles is None:
+                return False
+        except AttributeError:
             return False
         """
         Ignore if message from except roles
