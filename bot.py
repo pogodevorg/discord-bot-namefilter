@@ -57,6 +57,7 @@ if __name__ == '__main__':
             try:
                 await client.change_nickname(message.author, stripped_authorname)
                 await client.send_message(message.author, "```"+"Your nickname was changed to "+stripped_authorname+"\nThis could've happened for a couple reasons:\n1.) Your name is 3 characters or less\n2.) Your name contained Unicode\nIf you wish to have a different name on our Discord, please change your username and use the !resetnick command in #lounge```")
+                await client.delete_message(message)
             except discord.Forbidden:
                 return
     bot.run_worker('ChannelManagement')
