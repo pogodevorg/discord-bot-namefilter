@@ -6,6 +6,7 @@
 import discord
 import json
 import sys
+import logging
 import random
 
 from namefilter_bot import NameFilterBot, logger
@@ -42,9 +43,16 @@ if __name__ == '__main__':
                         await client.send_message(message.author, "[EXCEPTION ROLES] You may not reset your nickname!")
                         await client.delete_message(message)
                         return
+                if message.author.nick is None:
+                    await client.send_message(message.author, "`You have already reset your nickname!`")
+                    await client.delete_message(message)
+                    return
                 await client.change_nickname(message.author, "")
                 await client.send_message(message.author, "You have successfully reset your name back to `%s`!\n```Please consider changing your username to an appropriate name that does not include unicode special characters.```" % message.author.name)
                 await client.delete_message(message)
+                log_message = 'Executed Reset Name for User: ' + message.author.name
+                logger.log(log_message)
+                logging.warning(log_message)
                 return
             except discord.Forbidden:
                 return
