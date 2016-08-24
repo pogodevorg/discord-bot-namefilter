@@ -68,6 +68,11 @@ class ChannelManagement(BaseWorker):
             authorname = message.author.name
             encoded_authorname = authorname.encode('unicode_escape')
             stripped_authorname = encoded_authorname.decode('unicode_escape').encode('ascii','ignore').decode("utf-8")
+            if (len(str(message.author.name)) <= 3) and (message.author.nick is None) and not (message.author.nick in random_nicknames):
+                log_message = 'User has less than 3 chars.. needs to be changed for: ' + message.author.name
+                logger.log(log_message)
+                logging.warning(log_message)
+                return True
 			#If name is fine return false, otherwise return True
             if (message.author.name == stripped_authorname):
                 return False
