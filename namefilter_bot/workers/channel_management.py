@@ -27,8 +27,7 @@ class ChannelManagement(BaseWorker):
         for server in self.client.servers:
             for channel in server.channels:
                 if channel.name in self.config.get('channels', []):
-                    discord_channels.append(
-                        discord.Object(channel.id))
+                    discord_channels.append(discord.Object(channel.id))
 
         while not self.client.is_closed:
             for channel in discord_channels:
@@ -51,6 +50,8 @@ class ChannelManagement(BaseWorker):
             if message.author.roles is None:
                 return False
         except AttributeError:
+            return False
+        except discord.Forbidden:
             return False
         """
         Ignore if message from except roles
