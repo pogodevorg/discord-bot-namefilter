@@ -55,6 +55,14 @@ if __name__ == '__main__':
                 logging.warning(log_message)
                 return
             except discord.Forbidden:
+                log_message = 'I do not have required permissions to do this on ' + message.author.name
+                logger.log(log_message)
+                logging.warning(log_message)
+                return
+            except AttributeError:
+                log_message = 'I cannot grab roles for ' + message.author.name
+                logger.log(log_message)
+                logging.warning(log_message)
                 return
         if bot.on_message(message):
             authorname = message.author.name
