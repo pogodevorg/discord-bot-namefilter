@@ -1,6 +1,6 @@
 [![POGODEV](https://github.com/pogodevorg/assets/blob/master/img/logo-github.png)](https://pogodev.org)
 
-# discord-bot-namefilter [![license](https://img.shields.io/github/license/pogodevorg/discord-bot-chatfilter.svg?maxAge=2592000?style=flat-square)](https://github.com/pogodevorg/discord-bot-chatfilter/blob/master/LICENSE)
+# discord-bot-namefilter [![license](https://img.shields.io/github/license/pogodevorg/discord-bot-namefilter.svg?maxAge=2592000?style=flat-square)](https://github.com/pogodevorg/discord-bot-namefilter/blob/master/LICENSE)
 
 ## Table of Contents
 
