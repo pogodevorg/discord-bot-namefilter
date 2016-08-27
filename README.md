@@ -14,13 +14,30 @@
 * [Credits](#credits)
 
 ## What is it?
-`discord-bot-namefilter` is an open source bot for raising cats.
+`discord-bot-namefilter` is an open source repo for filtering out annoying unicode in discord usernames.
+Randomly selects a username from a list if the Discord User has less than 4 characters in their name.
+Filtering can be applied to specific channels as well.
 
 ## Installation
-Coming Soon
+```json
+{
+	"api_key": "BOT TOKEN HERE",
+	"channels": [
+    "CHANNEL NAME",
+    "Channel2"
+	],
+	"except_roles": [
+    "ROLE NAME",
+    "Moderator"
+	]
+}
+```
+1. `pip3 install -r requirements.txt`
+2. `cp config.json.sample config.json`
+3. `python3 bot.py`
 
 ## Documentation
-Coming Soon
+Any further documentation to be written here, or referred to elsewhere.
 
 ## Licensing
 [GNU GPL](https://github.com/pogodevorg/discord-bot-namefilter/blob/master/LICENSE) v3 or later.
