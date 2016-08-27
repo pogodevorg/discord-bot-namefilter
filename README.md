@@ -40,7 +40,7 @@ Filtering can be applied to specific channels as well.
 Any further documentation to be written here, or referred to elsewhere.
 
 ## Licensing
-[GNU GPL](https://github.com/pogodevorg/discord-bot-namefilter/blob/master/LICENSE), v3 or later.
+[GNU GPL](https://github.com/pogodevorg/discord-bot-namefilter/blob/master/LICENSE).
 
 ### Third Party Licenses
     None
