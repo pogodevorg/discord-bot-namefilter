@@ -32,9 +32,9 @@ Filtering can be applied to specific channels as well.
 	]
 }
 ```
-`pip3 install -r requirements.txt`
-`cp config.json.sample config.json`
-`python3 bot.py`
+1. `pip3 install -r requirements.txt`
+2. `cp config.json.sample config.json`
+3. `python3 bot.py`
 
 ## Documentation
 Any further documentation to be written here, or referred to elsewhere.
