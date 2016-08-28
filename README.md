@@ -1,6 +1,7 @@
 [![POGODEV](https://github.com/pogodevorg/assets/blob/master/public/img/logo-github.png?raw=true)](https://pogodev.org)
 
-# discord-bot-namefilter [![Build Status](https://img.shields.io/travis/pogodevorg/discord-bot-namefilter/master.svg)](https://img.shields.io/travis/pogodevorg/discord-bot-namefilter) [![Coverage Status](https://coveralls.io/repos/github/pogodevorg/discord-bot-namefilter/badge.svg?branch=master)](https://coveralls.io/github/pogodevorg/discord-bot-namefilter?branch=master) [![license](https://img.shields.io/github/license/pogodevorg/discord-bot-namefilter.svg?maxAge=2592000?style=flat-square)](#)
+# discord-bot-namefilter
+[![Build Status](https://travis-ci.org/pogodevorg/discord-bot-namefilter.svg?branch=master)](https://travis-ci.org/pogodevorg/discord-bot-namefilter) [![Code Climate](https://codeclimate.com/github/pogodevorg/discord-bot-namefilter/badges/gpa.svg)](https://codeclimate.com/github/pogodevorg/discord-bot-namefilter) [![Issue Count](https://codeclimate.com/github/pogodevorg/discord-bot-namefilter/badges/issue_count.svg)](https://codeclimate.com/github/pogodevorg/discord-bot-namefilter) [![license](https://img.shields.io/github/license/pogodevorg/discord-bot-namefilter.svg?maxAge=2592000?style=flat-square)](https://github.com/pogodevorg/discord-bot-namefilter/blob/master/LICENSE.md)
 
 ## Table of Contents
 * [What is it?](#what-is-it)
